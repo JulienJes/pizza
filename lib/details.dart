@@ -13,13 +13,11 @@ class Details extends StatefulWidget {
 
 class _Details extends State<Details> {
   late Future<PizzaData> _pizzaDetails;
-  late Future<List<int>> _pizzaImage;
 
   @override
   void initState() {
     super.initState();
     _pizzaDetails = fetchOnePizzaById(widget.id);
-    _pizzaImage = fetchPicture(widget.id);
   }
 
   @override
@@ -42,7 +40,7 @@ class _Details extends State<Details> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 FutureBuilder<List<int>>(
-                  future: _pizzaImage,
+                  future: fetchPicture(snapshot.data!.image),
                   builder: (BuildContext context,
                       AsyncSnapshot<List<int>> snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
