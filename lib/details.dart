@@ -48,37 +48,47 @@ class _Details extends State<Details> {
                     } else if (snapshot.hasError) {
                       return Text('Error: ${snapshot.error}');
                     } else {
-                      return Image.memory(Uint8List.fromList(snapshot.data!));
+                      return SizedBox(
+                        width: 150,
+                        height: 150,
+                        child: Image.memory(Uint8List.fromList(snapshot.data!)),
+                      );
                     }
                   },
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(snapshot.data!.name,
-                          style: Theme.of(context).textTheme.headlineSmall),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('${snapshot.data?.price.toString()} €',
-                          style: Theme.of(context).textTheme.titleLarge),
-                    ),
-                  ],
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(snapshot.data!.name,
+                            style: Theme.of(context).textTheme.headlineSmall),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('${snapshot.data?.price.toString()} €',
+                            style: Theme.of(context).textTheme.titleLarge),
+                      ),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Catégorie : ${snapshot.data?.category}',
-                          style: Theme.of(context).textTheme.bodyMedium),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Base : ${snapshot.data?.base}',
-                          style: Theme.of(context).textTheme.bodyMedium),
-                    ),
-                  ],
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Catégorie : ${snapshot.data?.category}',
+                            style: Theme.of(context).textTheme.bodyMedium),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Base : ${snapshot.data?.base}',
+                            style: Theme.of(context).textTheme.bodyMedium),
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
