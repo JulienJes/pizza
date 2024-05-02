@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:pizza/models/pizza_data_model.dart';
 import 'package:pizza/services/pizza_service.dart';
 
 class Details extends StatefulWidget {
