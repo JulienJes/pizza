@@ -3,6 +3,8 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:pizza/screens/details.dart';
 import 'package:pizza/models/pizza_data_model.dart';
+import 'package:pizza/screens/sign_in.dart';
+import 'package:pizza/screens/sign_up.dart';
 import 'package:pizza/services/pizza_service.dart';
 import 'package:pizza/stores/cart_store.dart';
 import 'package:pizza/widgets/app_bar.dart';
@@ -27,6 +29,11 @@ class _Master extends State<Master> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/signup': (context) => const SignUp(),
+        '/signin': (context) => const SignIn(),
+      },
       home: Scaffold(
         appBar: const CustomAppBar(),
         body: FutureBuilder<List<PizzaData>>(

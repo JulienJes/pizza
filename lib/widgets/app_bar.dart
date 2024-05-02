@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:pizza/screens/cart.dart';
+import 'package:pizza/screens/sign_up.dart';
 import 'package:pizza/stores/cart_store.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text("Pizza Napoli"),
       backgroundColor: const Color(0xFFE35169),
       actions: [
+        IconButton(
+          icon: const Icon(Icons.person),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SignUp()),
+            );
+          },
+        ),
         Padding(
           padding: const EdgeInsets.only(right: 40),
           child: badges.Badge(
