@@ -16,5 +16,7 @@ class CartItem {
     }
   }
 
-  double get totalPrice => pizza.price * quantity;
+  double get totalPrice {
+    return pizza.price * quantity;
+  }
 }

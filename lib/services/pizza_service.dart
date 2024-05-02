@@ -45,9 +45,8 @@ Future<PizzaData> fetchOnePizzaById(id) async {
 }
 
 Future<List<int>> fetchPicture(id) async {
-  print(id);
   String url = 'https://pizzas.shrp.dev/assets/$id';
-  print(url);
+
   try {
     final response = await Dio().get<List<int>>(
       url,
